@@ -58,5 +58,22 @@
     <!-- Start of bodyEnd -->
     
     <!-- End of bodyEnd -->
+    <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const badge = document.getElementById("__framer-badge-container");
+                if (badge) {
+                    badge.style.display = "none";
+                }
+            });
+            
+            const observer = new MutationObserver(() => {
+                const badge = document.getElementById("__framer-badge-container");
+                if (badge) {
+                    badge.style.display = "none";
+                }
+            });
+            
+            observer.observe(document.body, { childList: true, subtree: true });
+    </script>
 </body>
 </html>
